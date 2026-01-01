@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>The Bengaluru Café – Coming Soon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
-      height: 100%;
       background: #000;
-      overflow: hidden;
     }
 
-    .hero {
-      position: fixed;
-      inset: 0;                 /* top:0 right:0 bottom:0 left:0 */
-      width: 100vw;
-      height: 100vh;
-    }
-
-    .hero img {
+    /* Full-width image, no crop, scroll allowed */
+    img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;        /* fills screen, no black bars */
-      object-position: center;
+      height: auto;
       display: block;
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <img src="/coming-soon.jpg?v=20" alt="The Bengaluru Café – Coming Soon">
-  </div>
+  <picture>
+    <!-- Mobile: lighter file so iOS Safari ALWAYS opens -->
+    <source media="(max-width: 768px)" srcset="/coming-soon-mobile.jpg?v=1">
+    <!-- Desktop: your high-quality version -->
+    <img src="/coming-soon.jpg?v=1" alt="The Bengaluru Café – Coming Soon">
+  </picture>
 </body>
 </html>
